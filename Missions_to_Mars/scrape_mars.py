@@ -122,11 +122,11 @@ def scrape():
     ############### create one dictionary for return of all scraped info ###############
 
     scraped_data = {
-        "News Title": news_title,
-        "News Paragraph": news_p,
-        "Featured Image": featured_image_url,
-        "Mars Facts Table": mars_facts_html, 
-        "Hemisphere Images": hemisphere_image_urls
+        "NewsTitle": news_title,
+        "NewsParagraph": news_p,
+        "FeaturedImage": featured_image_url,
+        "MarsFactsTable": mars_facts_html, 
+        "HemisphereImages": hemisphere_image_urls
     }
 
     return scraped_data
