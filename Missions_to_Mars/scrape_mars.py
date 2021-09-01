@@ -66,9 +66,8 @@ def scrape():
     browser.visit(base_url)
     html = browser.html
 
-    # convert HTML to BeautifulSoup and pretty print to search through for needed content
+    # convert HTML to BeautifulSoup
     soup = bs(html, "html.parser")
-    print(soup.prettify())
 
     # use BeautifulSoup to find all div with specified class
     div_list = soup.body.find_all("div", class_="description")
@@ -100,14 +99,14 @@ def scrape():
             # convert HTML to BeautifulSoup
             soup = bs(html, "html.parser")
             
-            # use BeautifulSoup to find div with specified class, access the second li element, and access the href in the first a element
-            img_url_ending = soup.body.find("div", class_="downloads").find_all("li")[1].find("a")["href"]
+            # use BeautifulSoup to find image with specified class and access source of image
+            img_url_ending = soup.body.find("img", class_="wide-image")["src"]
             
-            # add base url to the image href to get full url
+            # add base url to the image source to get full url
             img_url = base_url + img_url_ending
             
-            # use image href, removing unneeded leading and trailing info, replacing underscores, converting to title case, and adding Hemisphere to the end to get title
-            title = img_url_ending[:-13][7:].replace("_", " ").title() + " Hemisphere"
+            # use title on page, removing unneeded trailing " Enhanced" to get title
+            title = soup.body.find("h2", class_="title").text.strip()[:-9]
             
             # append dictionary of information to list
             hemisphere_image_urls.append({"title": title, "img_url": img_url})
