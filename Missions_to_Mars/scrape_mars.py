@@ -56,7 +56,7 @@ def scrape():
     mars_facts_df = mars_facts_df.set_index("Mars - Earth Comparison")
 
     # convert dataframe back to html
-    mars_facts_html = mars_facts_df.to_html()
+    mars_facts_html = mars_facts_df.to_html(classes="table table-striped table-dark")
 
 
     ############### Mars Hemispheres ###############
