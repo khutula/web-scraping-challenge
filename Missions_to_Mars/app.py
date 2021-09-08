@@ -42,10 +42,6 @@ def data_scrape():
 
 
 
-
-
-
-
-
+# debug is set to false to prevent resetting page inturrupting webscraping
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
