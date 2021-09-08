@@ -8,16 +8,21 @@
 
 <a name="introduction"></a>
 ### Introduction
-In this assignment, I have been tasked with creating a responsive website that shows off analysis from a preivous project. I elected to use the provided images/dataset for this assignment.
+In this assignment, I have been tasked with building a web application that scrapes multiple Mars-related websites, saves specified information, inserts information into a MongoDB, and displays the information on a single HTML page.
 
 <a name="objectives"></a>
 ### Objectives
-Create a responsive website launched in GitHub pages that has:
-* Navigation menu created using Bootstrap
-* Landing Page describing the project and linking to plot pages
-* Plot Pages for each plot that shows a large image of the plot and describes its significance
-* Comparison Page showing all four plots enlarged with Bootstrap
-* Data page showing all data in a table and displayed with Bootstrap classes for responsiveness
+Scrape data using BeautifulSoup, Splinter, Pandas, and WebDriver_Manager:
+* Latest News Title and Paragraph Text from [Mars News Site](https://redplanetscience.com/)
+* Featured Mars Image URL from [JPL Mars Space Images](https://spaceimages-mars.com/)
+* Mars Facts Table from [Mars Facts](https://galaxyfacts-mars.com/)
+* Mars Hemisphere Titles and Full Resolution Image URLs from [Mars Hemispheres](https://marshemispheres.com/)
+
+Use MongoDB and Flask templating to create a webpage that:
+* Runs the Python script to scrape data at the click of a button
+* Stores the scraped data into MongoDB
+* Retrieves the most recent MongoDB entry
+* Displays all collected information in a clean webpage on the index route
 
 <a name="technologies"></a>
 ### Technologies & Sources
